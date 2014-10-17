@@ -9,6 +9,10 @@
 			<h3> Bem vindo <small id="nome"></small> </h3>
 			<input type="button" id="buscarNome" value="Buscar"/>
 			
+			<input type="text" id="nomePessoa" style="width:30px" />
+
+			<input type="button" id="salvarNome" value="Salvar"/>
+
 		</div>
 	</body>
 	<script type="text/javascript">
@@ -21,10 +25,23 @@
 				$('#nome').text(data.nome);
 
 			}
-			$.when(request).done(returnRequest);
+				$.when(request).done(returnRequest);
 			}
 
 			$('#buscarNome').on('click', clickHandler);
+
+
+			function saveHandler(){
+
+				var request  = $.post('/post', JSON.stringify({nome: $('#nomePessoa').val()}));
+
+				$.when(request).done(function(data){
+					console.log(data);
+				})
+
+			}
+
+			$('#salvarNome').on('click', saveHandler);
 
 			
 		})
