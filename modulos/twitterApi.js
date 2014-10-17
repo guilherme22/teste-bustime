@@ -1,10 +1,10 @@
 var Twit = require('twit')
 
 var T = new Twit({
-    consumer_key:         'mYOkydmfsHfeuCOYntPFcCcFn'
-  , consumer_secret:      'TbnykO78w6vUPt0xLBcF51206KIUmccjMksvqNu8DkKDSfl2CX'
-  , access_token:         '193105220-4xYGJBNUzsNsp0Zag4fNo1CAlY1Nrr8XGa5XZ3UN'
-  , access_token_secret:  'MZkjJRAtnxG5ARLNdwR4ZQLNGpITLpiJnm2XLOzE2f8ox'
+    consumer_key:         ''
+  , consumer_secret:      ''
+  , access_token:         ''
+  , access_token_secret:  ''
 })
 
 module.exports = {
