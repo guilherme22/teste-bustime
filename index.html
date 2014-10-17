@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<h3> Bem vindo <small id="nome"></small> </h3>
+			<input type="button" id="buscarNome" value="Buscar"/>
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			function clickHandler(){
+			var request = $.get('/teste');
+
+			function returnRequest( data ){
+				$('#nome').text(data.nome);
+
+			}
+			$.when(request).done(returnRequest);
+			}
+
+			$('#buscarNome').on('click', clickHandler);
+
+			
+		})
+	</script>
+</html>
